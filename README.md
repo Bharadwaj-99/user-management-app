@@ -20,7 +20,7 @@ This is a React-based User Management application that interacts with the JSONPl
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/user-management-app.git
+git clone https://https://github.com/Bharadwaj-99/user-management-app.git
 cd user-management-app
 ```
 
@@ -48,7 +48,6 @@ npm start
 ## Technologies Used
 - React
 - Axios
-- Tailwind-like CSS
 - Lucide React Icons
 - JSONPlaceholder API
 
@@ -79,8 +78,7 @@ To deploy the application:
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## Contact
-Your Name - your.email@example.com
 
-Project Link: [https://github.com/your-username/user-management-app](https://github.com/your-username/user-management-app)
+
+Project Link: [https://https://github.com/Bharadwaj-99/user-management-app](https://https://github.com/Bharadwaj-99/user-management-app)
 ```
