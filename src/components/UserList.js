@@ -124,7 +124,8 @@ const UserList = () => {
     return (
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-            <h1 className='user'>USER MANAGEMENT</h1>
+            <h1 className='heading'>USER MANAGEMENT</h1>
+            <div className='heading-sub'>
             <button 
               onClick={() => {
                 setSelectedUser(null);
@@ -134,6 +135,7 @@ const UserList = () => {
             >
                Add User <Plus/> 
             </button>
+            </div>
           </div>
     
           <div className="table-container">

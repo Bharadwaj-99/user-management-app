@@ -57,7 +57,7 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2 className="text-xl md:text-2xl font-bold mb-6">
+        <h2 className="modal-head">
           {user ? 'Edit User' : 'Add New User'}
         </h2>
         <form onSubmit={handleSubmit} className="form-input">
