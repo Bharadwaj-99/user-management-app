@@ -25,7 +25,6 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     
-    
     if (name === 'companyName') {
       setFormData(prev => ({
         ...prev,
@@ -43,11 +42,9 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
     e.preventDefault();
     try {
       if (user) {
-        
         const updatedUser = await userService.updateUser(user.id, formData);
         onSubmit(updatedUser);
       } else {
-    
         const newUser = await userService.createUser(formData);
         onSubmit(newUser);
       }
@@ -58,76 +55,76 @@ const UserForm = ({ user, onSubmit, onCancel }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-xl w-96">
-        <h2 className="text-2xl font-bold mb-6">
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <h2 className="text-xl md:text-2xl font-bold mb-6">
           {user ? 'Edit User' : 'Add New User'}
         </h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block mb-2">Name</label>
+        <form onSubmit={handleSubmit} className="form-input">
+          <div className='maincont' >
+            <label className='cont1'>Name :</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className='cont2'
               required
             />
           </div>
-          <div>
-            <label className="block mb-2">Username</label>
+          <div  className='maincont'>
+            <label className="block mb-2 text-sm">Username :</label>
             <input
               type="text"
               name="username"
               value={formData.username}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="cont2"
               required
             />
           </div>
-          <div>
-            <label className="block mb-2">Email</label>
+          <div className='maincont'>
+            <label className="block mb-2 text-sm">Email :</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="cont2"
               required
             />
           </div>
-          <div>
-            <label className="block mb-2">Phone</label>
+          <div className='maincont'>
+            <label className="block mb-2 text-sm">Phone :</label>
             <input
               type="tel"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="cont2"
             />
           </div>
-          <div>
-            <label className="block mb-2">Company Name</label>
+          <div className='maincont'>
+            <label className="block mb-2 text-sm">Company Name :</label>
             <input
               type="text"
               name="companyName"
               value={formData.company.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="cont2"
             />
           </div>
-          <div className="flex justify-between">
+          <div className="pop">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              className="btn"
             >
               {user ? 'Update User' : 'Add User'}
             </button>
             <button
               type="button"
               onClick={onCancel}
-              className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400"
+              className="btn2"
             >
               Cancel
             </button>

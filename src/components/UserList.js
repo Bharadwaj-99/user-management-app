@@ -86,7 +86,7 @@ const UserList = () => {
     }
      
     return (
-        <nav className="flex justify-center items-center space-x-2 mt-4">
+        <nav className="user">
           <button 
             onClick={() => paginate(currentPage - 1)} 
             disabled={currentPage === 1}
@@ -100,8 +100,8 @@ const UserList = () => {
               onClick={() => paginate(number)}
               className={`px-4 py-2 rounded ${
                 currentPage === number 
-                  ? 'bg-blue-500 text-white' 
-                  : 'bg-gray-200 text-gray-800'
+                  ? 'btn-primary text-white' 
+                  : 'btn-neutral text-gray-800'
               }`}
             >
               {number}
@@ -124,19 +124,19 @@ const UserList = () => {
     return (
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-            <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-0">User Management</h1>
-            <button
+            <h1 className='user'>USER MANAGEMENT</h1>
+            <button 
               onClick={() => {
                 setSelectedUser(null);
                 setIsFormOpen(true);
               }}
-              className="bg-green-500 text-white px-4 py-2 rounded flex items-center hover:bg-green-600"
+              className="btn"
             >
-              <Plus className="mr-2" /> Add User
+               Add User <Plus/> 
             </button>
           </div>
     
-          <div className="overflow-x-auto">
+          <div className="table-container">
             <table className="w-full bg-white shadow-md rounded-lg overflow-hidden">
               <thead className="bg-gray-100">
                 <tr>
@@ -159,13 +159,13 @@ const UserList = () => {
                     <td className="px-2 md:px-4 py-3 flex justify-center space-x-2">
                       <button
                         onClick={() => handleEdit(user)}
-                        className="text-blue-500 hover:bg-blue-100 p-2 rounded"
+                        className="btn"
                       >
                         <Edit size={20} />
                       </button>
                       <button
                         onClick={() => handleDelete(user.id)}
-                        className="text-red-500 hover:bg-red-100 p-2 rounded"
+                        className="btn2"
                       >
                         <Trash2 size={20} />
                       </button>
