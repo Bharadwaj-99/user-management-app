@@ -86,7 +86,7 @@ const UserList = () => {
     }
      
     return (
-        <nav className="user">
+        <nav className="heading">
           <button 
             onClick={() => paginate(currentPage - 1)} 
             disabled={currentPage === 1}
